@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (snapshot.hasData) {
-            final data = snapshot.data!;
+            // final data = snapshot.data!;
             return Container(
               height: 800,
               margin: EdgeInsets.all(30),
@@ -74,8 +74,8 @@ class HomeScreen extends StatelessWidget {
                   Image.network(
                       'https://runnerz.pk/cdn/shop/files/IMG_1211copy_c912e04a-963d-4b6b-940c-fa339e9ee006.jpg?v=1715238756'), // Display online image
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         "Nike Air Shoes",
@@ -87,6 +87,8 @@ class HomeScreen extends StatelessWidget {
                         height: 10,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
                             "\$450",
