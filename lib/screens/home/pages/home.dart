@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mad_lab_ecommerce_site_project/common/widgets/app_bar.dart';
+import 'package:mad_lab_ecommerce_site_project/screens/home/pages/home_screen.dart';
 import 'package:mad_lab_ecommerce_site_project/screens/home/widgets/bottom_nav_bar.dart';
 
 class Home extends StatefulWidget {
@@ -12,10 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _homeScreens = [
-    Container(
-      height: double.infinity,
-      color: Colors.amber,
-    ),
+    HomeScreen(),
     Container(
       height: double.infinity,
       color: Colors.black,
@@ -45,7 +43,6 @@ class _HomeState extends State<Home> {
         currentIndex: 0,
         ontapMethod: _onTapMethod,
       ),
-      
     );
   }
 }

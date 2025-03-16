@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mad_lab_ecommerce_site_project/screens/home/pages/home.dart';
 
-void main() {
+void main() async {
   runApp(const MyEcom());
 }
 
