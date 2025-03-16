@@ -31,15 +31,24 @@ class _FbottomBarState extends State<FbottomBar> {
           label: "Home",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Iconsax.heart_outline),
+          icon: Icon(
+            Iconsax.heart_outline,
+            size: 20,
+          ),
           label: "Wishlist",
         ),
         BottomNavigationBarItem(
-          icon: Icon(Iconsax.shopping_bag_outline),
+          icon: Icon(
+            Iconsax.shopping_bag_outline,
+            size: 20,
+          ),
           label: "ORDER",
         ),
         BottomNavigationBarItem(
-          icon: Icon(FontAwesome.user),
+          icon: Icon(
+            FontAwesome.user,
+            size: 20,
+          ),
           label: "LOGIN",
         ),
       ],
