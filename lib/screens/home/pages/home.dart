@@ -1,64 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:icons_plus/icons_plus.dart';
-import 'package:mad_lab_ecommerce_site_project/utilities/constants/colors.dart';
+import 'package:mad_lab_ecommerce_site_project/common/widgets/app_bar.dart';
+import 'package:mad_lab_ecommerce_site_project/screens/home/widgets/bottom_nav_bar.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+  final List<Widget> _homeScreens = [
+    Container(
+      height: double.infinity,
+      color: Colors.amber,
+    ),
+    Container(
+      height: double.infinity,
+      color: Colors.black,
+    ),
+    Container(
+      height: double.infinity,
+      color: Colors.blue,
+    ),
+    Container(
+      height: double.infinity,
+      color: Colors.green,
+    ),
+  ];
+
+  void _onTapMethod(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: FAppBar(),
-      bottomNavigationBar: BottomNavigationBar(
-          selectedLabelStyle: TextStyle(fontSize: 9),
-          unselectedLabelStyle: TextStyle(fontSize: 9),
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Iconsax.home_outline),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Iconsax.heart_outline),
-              label: "Wishlist",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Iconsax.shopping_bag_outline),
-              label: "ORDER",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Iconsax.profile_bulk),
-              label: "LOGIN",
-            ),
-          ]),
-    );
-  }
-}
-
-class FAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const FAppBar({
-    super.key,
-  });
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: Text(
-        "Mega Shop",
-        style: TextStyle(
-            fontFamily: "DMSans",
-            fontWeight: FontWeight.w700,
-            color: Fcolors.ocenBlue),
+      body: _homeScreens[_currentIndex],
+      bottomNavigationBar: FbottomBar(
+        currentIndex: 0,
+        ontapMethod: _onTapMethod,
       ),
-      centerTitle: true,
-      actions: [
-        Container(
-            padding: EdgeInsets.all(5),
-            child: Icon(Iconsax.notification_bing_outline)),
-        Container(padding: EdgeInsets.all(5), child: Icon(IonIcons.cart)),
-      ],
+      
     );
   }
 }
