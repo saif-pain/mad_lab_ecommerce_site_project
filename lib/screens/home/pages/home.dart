@@ -9,6 +9,28 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: FAppBar(),
+      bottomNavigationBar: BottomNavigationBar(
+          selectedLabelStyle: TextStyle(fontSize: 9),
+          unselectedLabelStyle: TextStyle(fontSize: 9),
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Iconsax.home_outline),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Iconsax.heart_outline),
+              label: "Wishlist",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Iconsax.shopping_bag_outline),
+              label: "ORDER",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Iconsax.profile_bulk),
+              label: "LOGIN",
+            ),
+          ]),
     );
   }
 }
